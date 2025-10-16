@@ -1,0 +1,31 @@
+{
+  "name": "shopping-list-api",
+  "version": "1.0.0",
+  "description": "This is an api that allows users to manage their shopping items.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon --watch src --ext ts --exec ts-node src/server.ts",
+    "build": "tsc",
+    "start": "node dist/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/siyabongamasiya/shopping-list-api.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/siyabongamasiya/shopping-list-api/issues"
+  },
+  "homepage": "https://github.com/siyabongamasiya/shopping-list-api#readme",
+  "dependencies": {
+    "@types/node": "^24.7.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
