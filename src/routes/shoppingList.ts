@@ -52,7 +52,7 @@ const shoppingListRoute = async (req: IncomingMessage, res: ServerResponse) => {
       // ----- Delete list -----
       if (url?.startsWith("/lists/") && method === "DELETE") {
         const id = url.split("/")[2];
-        await deleteShoppingList(id);
+        deleteShoppingList(id);
         res.writeHead(204);
         return res.end();
       }
