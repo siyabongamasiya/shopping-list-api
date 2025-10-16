@@ -4,8 +4,14 @@ import { shoppingLists, items } from "../data/database";
 // Add item to a specific shopping list
 export const addItem = (
   item: Omit<Item, "id" | "createdAt" | "updatedAt">
-): Item => {
+): Item | null => {
+  // Validate required fields
+  if (!item.name || item.quantity == null || !item.shoppingListId) {
+    return null;
+  }
+
   const now = new Date().toISOString();
+
   const newItem: Item = {
     ...item,
     id: (Math.random() * 1000000).toFixed(0),
@@ -25,6 +31,7 @@ export const addItem = (
 
   return newItem;
 };
+
 
 export const  getAllItemsFromAllLists = (): Item[] => {
   return items;

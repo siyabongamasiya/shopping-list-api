@@ -29,13 +29,27 @@ const itemsRoute = async (req: IncomingMessage, res: ServerResponse) => {
           );
         }
         const newItem = addItem(data);
+
+        if (newItem === null) {
+          res.writeHead(400, { "Content-Type": "application/json" });
+          return res.end(
+            JSON.stringify({
+              error:
+                "Missing required fields: name, quantity, or shoppingListId.",
+            })
+          );
+        }
+
+        res.writeHead(201, { "Content-Type": "application/json" });
+        return res.end(JSON.stringify(newItem));
+
         res.writeHead(201, { "Content-Type": "application/json" });
         return res.end(JSON.stringify(newItem));
       }
 
       //get all items
       if (url === "/items" && method === "GET") {
-        const items = getAllItemsFromAllLists(); 
+        const items = getAllItemsFromAllLists();
         res.writeHead(200, { "Content-Type": "application/json" });
         return res.end(JSON.stringify(items));
       }
