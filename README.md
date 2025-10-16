@@ -14,7 +14,7 @@ The **Shopping List API** helps users manage their shopping items easily. It sto
 
 - ✅ Create, Read, Update, Delete (CRUD) shopping lists
 - ✅ Add, Update, Delete items within a shopping list
-- ✅ In-memory JSON-based data storage (no database setup required)
+- ✅ In-memory data storage (no database setup required)
 - ✅ TypeScript for type safety
 - ✅ Simple and lightweight server built using Node's native http module
 - ✅ Ready for testing with Thunder Client or Postman
@@ -105,7 +105,7 @@ Replace localhost:3000 with your server host if needed.
 
 **Create shopping list**
 
-POST http://localhost:3000/shopping-lists
+POST http://localhost:3000/lists
 Content-Type: application/json
 
 {
@@ -114,11 +114,11 @@ Content-Type: application/json
 
 **Get all shopping lists**
 
-GET http://localhost:3000/shopping-lists
+GET http://localhost:3000/lists
 
 **Get single shopping list**
 
-GET http://localhost:3000/shopping-lists/191535
+GET http://localhost:3000/lists/191535
 
 **Add item to list** (note shoppingListId in body)
 
